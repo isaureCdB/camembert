@@ -1,0 +1,44 @@
+fclustaa = json.load(open("./fragments_clustaa.json"))
+chains = json.load(open('chainsmodels_frag.json'))
+
+s = ["G", "U"]
+if na == 'dna':
+    s = ["G", "T"]
+
+mut = {'G': 'G',
+     'A': 'G',
+     'C': 'U',
+     'U': 'U',
+     'T': 'U',
+         }
+
+cluster2 = {}
+for k in fclustaa:
+    cluster2a = {}
+    for kk, frag in fclustaa[k].items():
+        try:
+            c = frag["clust2Aaa"]
+        except:
+            print(frag, kk)
+            raise
+        if c not in cluster2a:
+            cluster2a[c] = []
+        cluster2a[c].append(frag)
+    cluster2[k] = cluster2a
+
+
+cluster2_stats = {}
+for motif in cluster2:
+    print(motif)
+    cluster2_stats[motif] = []
+    for clust2a in cluster2[motif].values():
+        s2D = {}
+        for f in clust2a:
+            struc, c =  f['structure'], f['chain']
+            ind = f['indices']
+            s2dtot = chains[struc]['ss'][c]
+            s2d = "".join([s2dtot[str(i)][0] for i in ind])
+            if s2d not in s2D:
+                s2D[s2d] = 0
+            s2D[s2d] += 1
+        cluster2_stats[motif].append(s2D)

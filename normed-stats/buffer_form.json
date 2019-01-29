@@ -1,0 +1,69 @@
+{
+  "properties": {
+    "GGG": {
+      "identical": true,
+      "items": "integer",
+      "shape": [
+        3
+      ],
+      "type": "array"
+    },
+    "GGU": {
+      "identical": true,
+      "items": "integer",
+      "shape": [
+        3
+      ],
+      "type": "array"
+    },
+    "GUG": {
+      "identical": true,
+      "items": "integer",
+      "shape": [
+        3
+      ],
+      "type": "array"
+    },
+    "GUU": {
+      "identical": true,
+      "items": "integer",
+      "shape": [
+        3
+      ],
+      "type": "array"
+    },
+    "UGG": {
+      "identical": true,
+      "items": "integer",
+      "shape": [
+        3
+      ],
+      "type": "array"
+    },
+    "UGU": {
+      "identical": true,
+      "items": "integer",
+      "shape": [
+        3
+      ],
+      "type": "array"
+    },
+    "UUG": {
+      "identical": true,
+      "items": "integer",
+      "shape": [
+        3
+      ],
+      "type": "array"
+    },
+    "UUU": {
+      "identical": true,
+      "items": "integer",
+      "shape": [
+        3
+      ],
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "data": {
+    "values":[
+    {"nucl_part":"phos", "2D":"single-stranded", "value":75.3},
+    {"nucl_part":"phos", "2D":"double-stranded", "value":58.2},
+    {"nucl_part":"sugar", "2D":"single-stranded", "value":85.6},
+    {"nucl_part":"sugar", "2D":"double-stranded", "value":87.8},
+    {"nucl_part":"base", "2D":"single-stranded", "value":80.1},
+    {"nucl_part":"base", "2D":"double-stranded", "value":73.6}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "column": {"field": "nucl_part", "type": "nominal"},
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "axis": {"title": "percent of bound residues", "grid": false}
+    },
+    "x": {
+      "field": "2D",
+      "type": "nominal",
+      "axis": {"title": "", "labels": false}
+    },
+    "color": {
+      "field": "2D",
+      "type": "nominal",
+      "scale": {"range": ["#EA98D2", "#659CCA"]}
+    }
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"domainWidth": 1},
+    "axisY": {"minExtent": 30},
+    "style": {"cell": {"stroke": "transparent"}}
+  }
+}
